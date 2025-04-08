@@ -169,7 +169,7 @@ services:
       _AIRFLOW_WWW_USER_PASSWORD: ${_AIRFLOW_WWW_USER_PASSWORD:-airflow}
       _PIP_ADDITIONAL_REQUIREMENTS: ''
 
-    user: "0:0"
+    user: "${AIRFLOW_UID}:0"
     volumes:
       - ${AIRFLOW_PROJ_DIR:-.}:/sources
     networks:
