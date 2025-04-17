@@ -1,0 +1,45 @@
+bigquery_profile:
+  target: dev
+
+  outputs:
+    # 1️⃣ Local development - service account JSON key
+    dev:
+      type: bigquery
+      method: service-account
+      keyfile: /app/keyfile.json  # mount this in Docker
+      project: my-gcp-dev-project
+      dataset: my_dev_dataset
+      threads: 2
+      timeout_seconds: 300
+      location: US
+
+    # 2️⃣ CI/CD pipeline - application default credentials
+    ci:
+      type: bigquery
+      method: oauth
+      project: my-gcp-ci-project
+      dataset: my_ci_dataset
+      threads: 2
+      timeout_seconds: 300
+      location: US
+
+    # 3️⃣ Production - workload identity federation / GCE instance identity
+    prod:
+      type: bigquery
+      method: oauth
+      project: my-gcp-prod-project
+      dataset: my_prod_dataset
+      threads: 4
+      timeout_seconds: 600
+      location: US
+
+    # 3️⃣ Production - workload identity federation / GCE instance identity
+    impersonated:
+      type: bigquery
+      method: impersonate
+      impersonate_service_account: sa-dbt-runner@your-project.iam.gserviceaccount.com
+      project: your-project-id
+      dataset: your_dataset
+      threads: 4
+      timeout_seconds: 300
+      location: US

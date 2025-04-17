@@ -1,0 +1,48 @@
+postgres_profile:
+  target: dev
+
+  outputs:
+    # 1️⃣ Local Dev - Username/Password Authentication
+    dev:
+      type: postgres
+      host: localhost
+      user: dbt_user
+      password: dbt_password
+      port: 5432
+      dbname: dev_db
+      schema: public
+      threads: 2
+
+    # 2️⃣ CI/CD - Username/Password from Environment Variables
+    ci:
+      type: postgres
+      host: "{{ env_var('PGHOST') }}"
+      user: "{{ env_var('PGUSER') }}"
+      password: "{{ env_var('PGPASSWORD') }}"
+      port: "{{ env_var('PGPORT', '5432') }}"
+      dbname: "{{ env_var('PGDATABASE') }}"
+      schema: "{{ env_var('PGSCHEMA', 'public') }}"
+      threads: 2
+
+    # 3️⃣ GCP Cloud SQL Postgres - IAM Auth (Cloud SQL Auth Proxy)
+    gcp_iam:
+      type: postgres
+      host: 127.0.0.1  # if using cloud_sql_proxy
+      user: dbt_user
+      password: "{{ env_var('DBT_PASSWORD') }}"  # Use a secure secret from GCP Secret Manager
+      port: 5432
+      dbname: cloudsql_db
+      schema: analytics
+      threads: 4
+
+    # 4️⃣ SSL-based Auth (e.g., RDS Postgres with SSL enforcement)
+    prod_ssl:
+      type: postgres
+      host: my-rds-instance.abcdefg.us-west-2.rds.amazonaws.com
+      user: dbt_user
+      password: "{{ env_var('RDS_PASSWORD') }}"
+      port: 5432
+      dbname: prod_db
+      schema: analytics
+      threads: 4
+      sslmode: require  # or verify-full if certs are mounted

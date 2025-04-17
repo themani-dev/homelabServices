@@ -1,0 +1,50 @@
+redshift_profile:
+  target: dev
+
+  outputs:
+    # 1️⃣ Local Dev - Username/Password Auth
+    dev:
+      type: redshift
+      host: your-redshift-cluster.region.redshift.amazonaws.com
+      user: dbt_user
+      password: your_password
+      port: 5439
+      dbname: dev_db
+      schema: dev_schema
+      threads: 2
+      ssl: true
+
+    # 2️⃣ CI/CD or EC2/ECS - IAM Role Auth (automatic credential lookup)
+    prod:
+      type: redshift
+      method: iam
+      cluster_id: your-redshift-cluster
+      dbname: prod_db
+      schema: prod_schema
+      iam_profile: arn:aws:iam::123456789012:role/dbt-redshift-role
+      region: us-west-2
+      threads: 4
+
+    # 3️⃣ IAM User with Access Keys
+    ci_keys:
+      type: redshift
+      method: iam
+      cluster_id: your-redshift-cluster
+      dbname: ci_db
+      schema: ci_schema
+      user: iam_user
+      access_key_id: "{{ env_var('AWS_ACCESS_KEY_ID') }}"
+      secret_access_key: "{{ env_var('AWS_SECRET_ACCESS_KEY') }}"
+      region: us-west-2
+      threads: 2
+
+    # 4️⃣ AWS Profile-based Auth (from ~/.aws/credentials)
+    aws_profile:
+      type: redshift
+      method: iam
+      cluster_id: your-redshift-cluster
+      dbname: profile_db
+      schema: profile_schema
+      profile: my_aws_profile
+      region: us-east-1
+      threads: 2
