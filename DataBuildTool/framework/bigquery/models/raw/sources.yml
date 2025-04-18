@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: raw
+    database: hakoona-matata-298704  # optional for BigQuery
+    schema: SFCrimeData          # BigQuery dataset or Redshift schema
+    tables:
+      - name: tbl_raw_crime
+        description: "Raw data from website with truncate and load configuration"
+        columns:
+          - name: incident_id
+            description: "Primary key of the crime"
+            tests:
+              - not_null
+              - unique

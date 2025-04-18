@@ -6,12 +6,12 @@ bigquery_profile:
     dev:
       type: bigquery
       method: service-account
-      keyfile: /app/keyfile.json  # mount this in Docker
-      project: my-gcp-dev-project
-      dataset: my_dev_dataset
-      threads: 2
-      timeout_seconds: 300
-      location: US
+      keyfile: "{{ env_var('GCLOUD_KEYFILE_PATH', '/app/gcloud.json') }}"
+      project: "{{ env_var('GCLOUD_PROJECT') }}"
+      dataset: "{{ env_var('GCLOUD_DATASET') }}"
+      threads: {{ env_var('GCLOUD_THREADS', 4) }}
+      timeout_seconds: {{ env_var('GCLOUD_TIMEOUT', 300) }}
+      location: "{{ env_var('GCLOUD_LOCATION', 'US') }}"
 
     # 2️⃣ CI/CD pipeline - application default credentials
     ci:

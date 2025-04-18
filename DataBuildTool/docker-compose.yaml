@@ -1,0 +1,18 @@
+services:
+  dbt:
+    image: ghcr.io/dbt-labs/dbt-${DBT_ADAPTER:-bigquery}:latest
+    volumes:
+      - ./profiles_${ADAPTER}.yml:/app/profiles.yml
+      - ./serviceAcounts/gcloud.json:/app/gcloud.json
+      - ./framework/${ADAPTER}:/app
+    working_dir: /app
+    env_file:
+      - .env
+    environment:
+      DBT_PROFILES_DIR: /app
+    command: ["dbt", "run"]
+
+networks:
+  default:
+    name: homelabServices
+    external: true
