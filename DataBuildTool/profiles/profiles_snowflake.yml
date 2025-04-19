@@ -1,4 +1,4 @@
-snowflake_profile:
+framework:
   target: dev
 
   outputs:

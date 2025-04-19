@@ -1,4 +1,4 @@
-bigquery_profile:
+framework:
   target: dev
 
   outputs:
@@ -6,12 +6,12 @@ bigquery_profile:
     dev:
       type: bigquery
       method: service-account
-      keyfile: "{{ env_var('GCLOUD_KEYFILE_PATH', '/app/gcloud.json') }}"
-      project: "{{ env_var('GCLOUD_PROJECT') }}"
-      dataset: "{{ env_var('GCLOUD_DATASET') }}"
-      threads: {{ env_var('GCLOUD_THREADS', 4) }}
-      timeout_seconds: {{ env_var('GCLOUD_TIMEOUT', 300) }}
-      location: "{{ env_var('GCLOUD_LOCATION', 'US') }}"
+      keyfile: /app/gcloud.json
+      project: hakoona-matata-298704
+      dataset: SFCrimeData
+      threads: 4
+      timeout_seconds: 300
+      location: US
 
     # 2️⃣ CI/CD pipeline - application default credentials
     ci:

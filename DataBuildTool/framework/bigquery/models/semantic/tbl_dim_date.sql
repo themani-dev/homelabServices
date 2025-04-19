@@ -2,6 +2,7 @@
     config(
         materialized='incremental',
         unique_key='incident_datetime',
+        tags=['date_dim'],
         partition_by = {
             'field': 'incident_datetime',
             'data_type': 'timestamp'

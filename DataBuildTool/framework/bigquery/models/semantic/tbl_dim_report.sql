@@ -1,6 +1,7 @@
 {{
     config(
         materialized='incremental',
+        tags=['report dim'],
         unique_key='incident_datetime'
     )
 }}

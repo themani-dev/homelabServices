@@ -1,3 +1,4 @@
 .env
 logs
 serviceAccounts
+docker-compose.yaml

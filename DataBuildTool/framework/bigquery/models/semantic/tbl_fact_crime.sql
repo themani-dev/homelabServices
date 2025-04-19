@@ -3,6 +3,7 @@
     config(
         materialized='incremental',
         unique_key='incident_id',
+        tags=['crime_fact'],
         partition_by = {
             'field': 'load_timestamp',
             'data_type': 'timestamp'

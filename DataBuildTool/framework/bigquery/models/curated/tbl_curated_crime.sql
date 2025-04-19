@@ -2,6 +2,7 @@
     config(
         materialized='incremental',
         unique_key='incident_id',
+        tags=['curated_crime'],
         partition_by = {
             'field': 'load_timestamp',
             'data_type': 'timestamp'
@@ -34,4 +35,4 @@ select
     latitude ,
     longitude ,
     point 
-from {{ sources('raw','tbl_raw_crime')}}
+from {{ source('raw','tbl_raw_crime')}}

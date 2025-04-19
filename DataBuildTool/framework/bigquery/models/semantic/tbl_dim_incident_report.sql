@@ -1,6 +1,7 @@
 {{
     config(
         materialized='incremental',
+        tags=['incident_dim'],
         unique_key='incident_code'
     )
 }}
