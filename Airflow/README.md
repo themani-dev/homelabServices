@@ -1,4 +1,4 @@
-<img src="https://www.kindpng.com/picc/m/401-4019608_air-flow-png-apache-airflow-logo-png-transparent.png" width="1000" height="150">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/AirflowLogo.png/1200px-AirflowLogo.png" width="1000" height="150">
 
 # Apache Airflow Installation Guide (Airflow, PostgreSQL, and Wrapper Script)
 
