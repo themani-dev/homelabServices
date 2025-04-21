@@ -1,0 +1,9 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'us-west2-docker.pkg.dev/hakoona-matata-298704/dataengineering/dbt:latest', '.']
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'us-west2-docker.pkg.dev/hakoona-matata-298704/dataengineering/dbt:latest']
+
+images:
+  - 'us-west2-docker.pkg.dev/hakoona-matata-298704/dataengineering/dbt:latest'
