@@ -15,8 +15,25 @@
   </a>
 </p> -->
 
+<p align="center">
 
+  <a href="#quickstart-for-gcp-bigquery">
+    <img src="https://img.shields.io/badge/BigQuery%20Setup-GCP-blue?style=for-the-badge&logo=googlecloud&logoColor=white" alt="BigQuery Badge"/>
+  </a>
+  &nbsp;
+  <a href="#-quickstart-for-aws-redshift">
+    <img src="https://img.shields.io/badge/Redshift%20Setup-AWS-orange?style=for-the-badge&logo=amazonaws&logoColor=white" alt="Redshift Badge"/>
+  </a>
+  &nbsp;
+  <a href="#-quickstart-for-postgres-vmonprem">
+    <img src="https://img.shields.io/badge/Postgres%20Setup-OnPrem%2FLocal-316192?style=for-the-badge&logo=postgresql&logoColor=white" alt="Postgres Badge"/>
+  </a>
+  &nbsp;
+  <a href="#-quickstart-for-snowflake">
+    <img src="https://img.shields.io/badge/Snowflake%20Setup-Cross--Cloud-00c7e6?style=for-the-badge&logo=snowflake&logoColor=white" alt="Snowflake Badge"/>
+  </a>
 
+</p>
 
 
 ---
@@ -97,7 +114,7 @@ Each environment is supported through:
 
 
 ---
-## 🚀 Step-by-Step Deployment Guide
+# 🚀 Step-by-Step Deployment Guide
 
 ### Prerequisites
 
@@ -106,7 +123,7 @@ Ensure you have the following tools installed:
 - A terminal with Docker access
 
 
-## 🚀 Quickstart for GCP (BigQuery)
+## Quickstart for GCP (BigQuery)
 
 
 ### 1. 🔐 Update Service Account (Optional)
@@ -148,6 +165,13 @@ This script will:
 ### 5. ✅ Confirm Upload
 Check in GCP Console → Artifact Registry → dbt:latest image is visible.
 
+
+## 🚧 Quickstart for AWS (Redshift)
+> coming soon
+## 🚧 Quickstart for postgres (vm/onprem)
+> coming soon
+## 🚧 Quickstart for snowflake
+> coming soon
 ---
 ## 📂 Profiles Support
 Each profile (`profiles_<adapter>.yml`) supports multiple authentication methods and project targets. Example for BigQuery:
