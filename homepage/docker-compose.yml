@@ -1,0 +1,17 @@
+version: "3.3"
+
+services:
+  homepage:
+    image: ghcr.io/gethomepage/homepage:latest
+    container_name: homepage
+    restart: unless-stopped
+    ports:
+      - 3000:3000
+    env_file: .env
+    environment:
+      PUID: $PUID
+      PGID: $PGID
+      HOMEPAGE_ALLOWED_HOSTS: "localhost,127.0.0.1,homeserver.tailc86de.ts.net,homelab.themani.dev"
+    volumes:
+      - ./config:/app/config
+      - /var/run/docker.sock:/var/run/docker.sock

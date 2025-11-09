@@ -1,0 +1,118 @@
+---
+# For configuration options and examples, please see:
+# https://technotim.live/posts/homepage-dashboard/#my-dashboard
+# https://gethomepage.dev/latest/configs/services
+# icons found here https://github.com/walkxcode/dashboard-icons
+
+- Hypervisor:
+    - Proxmox:
+        icon: proxmox.svg
+        href: "{{HOMEPAGE_VAR_PROXMOX_URL}}"
+        description: pve1
+        widget:
+            type: proxmox
+            url: "{{HOMEPAGE_VAR_PROXMOX_URL}}"
+            username:  "{{HOMEPAGE_VAR_PROXMOX_USER}}"
+            password:  "{{HOMEPAGE_VAR_PROXMOX_API_KEY}}"
+            node: xing-01
+    - virtualmachinemanager:
+        icon: virtualmachine.svg
+        href: "{{HOMEPAGE_VAR_VIRTUALMACHINE_URL}}"
+        description: vmware
+        widget:
+            type: virtualmachine
+            url: "{{HOMEPAGE_VAR_VIRTUALMACHINE_URL}}"
+            username:  "{{HOMEPAGE_VAR_VIRTUALMACHINE_USER}}"
+            password:  "{{HOMEPAGE_VAR_VIRTUALMACHINE_API_KEY}}"
+- Containers:
+    - Portainer:
+        icon: portainer.svg
+        href: "{{HOMEPAGE_VAR_PORTAINER_URL}}"
+        description: docker
+        widget:
+            type: portainer
+            url: "{{HOMEPAGE_VAR_PORTAINER_URL}}"
+            env: 2
+            key: "{{HOMEPAGE_VAR_PORTAINER_API_KEY}}"
+- DNS:
+    - Pi-Hole1:
+        icon: pi-hole.svg
+        href: "{{HOMEPAGE_VAR_PIHOLE_URL_1}}"
+        description: quasar
+        widget:
+            type: pihole
+            url: "{{HOMEPAGE_VAR_PIHOLE_URL_1}}"
+            key: "{{HOMEPAGE_VAR_PIHOLE_API_KEY_1}}"
+- Storage:
+    - Nextcloud:
+        icon: nextcloud.svg
+        href: "{{HOMEPAGE_VAR_NEXTCLOUD_URL}}"
+        description: cloud storage
+        widget:
+            type: nextcloud
+            url: "{{HOMEPAGE_VAR_NEXTCLOUD_URL}}"
+            key: "{{HOMEPAGE_VAR_NEXTCLOUD_API_KEY}}"
+    - filebrowser:
+        icon: filebrowser.svg
+        href: "{{HOMEPAGE_VAR_FILEBROWSER_URL}}"
+        description: file management
+        widget:
+            type: filebrowser
+            url: "{{HOMEPAGE_VAR_FILEBROWSER_URL}}"
+            key: "{{HOMEPAGE_VAR_FILEBROWSER_API_KEY}}"
+- Media:
+    - Plex:
+        icon: plex.svg
+        href: "{{HOMEPAGE_VAR_PLEX_URL}}"
+        description: media server
+        widget:
+            type: plex
+            url: "{{HOMEPAGE_VAR_PLEX_URL}}"
+            key: "{{HOMEPAGE_VAR_PLEX_API_TOKEN}}"
+    - Photoprism:
+        icon: photoprism.svg
+        href: "{{HOMEPAGE_VAR_PHOTOPRISM_URL}}"
+        description: photo management
+        widget:
+            type: photoprism
+            url: "{{HOMEPAGE_VAR_PHOTOPRISM_URL}}"
+            key: "{{HOMEPAGE_VAR_PHOTOPRISM_API_KEY}}"
+- Home Automation:
+    - Home Assistant:
+        icon: home-assistant.svg
+        href: "{{HOMEPAGE_VAR_HOME_ASSISTANT_URL}}"
+        description: home
+        widget:
+            type: homeassistant
+            url: "{{HOMEPAGE_VAR_HOME_ASSISTANT_URL}}"
+            key: "{{HOMEPAGE_VAR_HOME_ASSISTANT_API_KEY}}"
+- IDE:
+    - Visual Studio Code:
+        icon: vscode.svg
+        href: "{{HOMEPAGE_VAR_VSCODE_URL}}"
+        description: code editor
+        widget:
+            type: vscode
+            url: "{{HOMEPAGE_VAR_VSCODE_URL}}"
+            key: "{{HOMEPAGE_VAR_VSCODE_API_KEY}}"
+    - anaconda:
+        icon: anaconda.svg
+        href: "{{HOMEPAGE_VAR_ANACONDA_URL}}"
+        description: data science
+        widget:
+            type: anaconda
+            url: "{{HOMEPAGE_VAR_ANACONDA_URL}}"
+            key: "{{HOMEPAGE_VAR_ANACONDA_API_KEY}}"
+- Other:
+    - GitLab:
+        icon: gitlab.svg
+        href: https://gitlab.com/themani-dev
+        description: source code
+    - GitHub:
+        icon: github.svg
+        href: https://github.com/themani-dev
+        description: source code
+    - Shlink:
+        icon: https://shlink.io/images/shlink-logo-blue.svg
+        href: "{{HOMEPAGE_VAR_SHLINK_URL}}"
+        description: dashboard

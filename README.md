@@ -1,16 +1,26 @@
-# homelabServices
-List of services and their docker compose files required to run within my local sever setup
+# 🏠 HomeLab Services – Self-Hosted Stack Overview
 
+This section highlights the list of services running on my home server and their configuration details. These are containerized using Docker Compose and optimized for local development, monitoring, and data workflows.
 
-Common Network for all the services. Change or create as per requirements
+---
 
-Remove network on docker-compose 
-```yaml
-network
-    - test
-```
-Create with below code for creating a network
-```yaml
-network
-    - test
-```
+## 📦 Infrastructure Setup
+- All services are defined in a Docker Compose stack
+
+- Environment-specific configs are isolated in .env files
+
+- Logs and volumes are mapped for persistence
+
+- Network is custom-defined: homelabServices
+
+---
+
+## 🧠 Goals of this Setup
+- 📊 Build a reliable, always-on local development + analytics platform
+
+- 💾 Centralize storage and sync across devices
+
+- 🛠️ Automate data pipelines and observability
+
+- 📡 Integrate IoT, AI, and monitoring tools under one stack
+

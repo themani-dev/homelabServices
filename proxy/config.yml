@@ -1,0 +1,16 @@
+tunnel: zimaboard-homelab
+credentials-file: /root/.cloudflared/8afc8294-c7c6-40d7-9fcf-db9cfb62ee6a.json
+
+ingress:
+  - hostname: dashboard.themani.dev
+    service: http://localhost:80
+
+  - hostname: zimahomelab.themani.dev
+    path: /filebrowser/*
+    service: http://localhost:10180  # Worker proxy (use different port than actual apps)
+
+  - hostname: zimahomelab.themani.dev
+    path: /gallery/*
+    service: http://localhost:2432  # Worker proxy (use different port than actual apps)
+
+  - service: http_status:404
