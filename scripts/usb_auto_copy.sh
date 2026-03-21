@@ -3,6 +3,19 @@
 ################# Pre Deployment steps ##################
 ## Copy this file to /usr/local/bin/usb_auto_copy.sh
 ## Copy the env file to /etc/usb_auto_copy.env
+# sudo chmod +x /usr/local/bin/usb_auto_copy.sh
+# sudo chmod 600 /etc/usb_auto_copy.env
+
+################## Post Deployment steps ##################
+# sudo nano /etc/udev/rules.d/99-usb-automount.rules
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~ Add these lines to the file ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# ACTION=="add", SUBSYSTEM=="block", ENV{ID_BUS}=="usb", ENV{DEVTYPE}=="partition", RUN+="/usr/local/bin/usb_auto_copy.sh add /dev/%k"
+# ACTION=="remove", SUBSYSTEM=="block", ENV{ID_BUS}=="usb", ENV{DEVTYPE}=="partition", RUN+="/usr/local/bin/usb_auto_copy.sh remove /dev/%k"
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# sudo udevadm control --reload-rules
+# sudo udevadm trigger
+
+########################################################
 
 # sudo chmod +x /usr/local/bin/usb_auto_copy.sh
 # sudo chmod 600 /etc/usb_auto_copy.env
