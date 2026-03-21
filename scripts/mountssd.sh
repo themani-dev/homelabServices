@@ -11,12 +11,12 @@ echo "🔧 Starting SSD mount setup..."
 # =========================================================
 
 # Disk 1 - SSD
-SSD1_UUID="REPLACE_WITH_UUID_1"
+SSD1_UUID="5c7ec71f-b289-49fa-8d73-4dff811a20a8"
 SSD1_MOUNT="/mnt/cache"
 SSD1_FS="ext4"        # ext4 | ntfs-3g | exfat
 
 # Disk 2 - HDD
-SSD2_UUID="REPLACE_WITH_UUID_2"
+SSD2_UUID="fc15013f-acc6-4e16-8994-53a0bad298ae"
 SSD2_MOUNT="/mnt/storage"
 SSD2_FS="ext4"        # ext4 | ntfs-3g | exfat
 
