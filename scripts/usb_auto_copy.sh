@@ -17,6 +17,7 @@
 
 ########################################################
 
+
 # sudo chmod +x /usr/local/bin/usb_auto_copy.sh
 # sudo chmod 600 /etc/usb_auto_copy.env
 
