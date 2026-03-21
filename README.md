@@ -24,3 +24,24 @@ This section highlights the list of services running on my home server and their
 
 - 📡 Integrate IoT, AI, and monitoring tools under one stack
 
+## List of Services
+
+- Tailscale VPN
+
+- Casaos
+
+- Docker
+
+- jellyfin
+
+- filebrowser
+
+- portainer
+
+- cloudflared
+
+- immich
+
+- webDAV
+
+- 
