@@ -80,7 +80,7 @@ EOF
 
 sudo systemctl daemon-reexec
 sudo systemctl start docker
-
+sleep 3
 # -------------------------------
 # INSTALL DOCKER COMPOSE
 # -------------------------------

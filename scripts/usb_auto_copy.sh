@@ -3,6 +3,7 @@
 ################# Pre Deployment steps ##################
 ## Copy this file to /usr/local/bin/usb_auto_copy.sh
 ## Copy the env file to /etc/usb_auto_copy.env
+
 # sudo chmod +x /usr/local/bin/usb_auto_copy.sh
 # sudo chmod 600 /etc/usb_auto_copy.env
 
