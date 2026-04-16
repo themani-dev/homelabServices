@@ -69,7 +69,7 @@ DOCKER_DIR="$DATA_ROOT/docker"
 # -------------------------------
 # UPDATE SYSTEM
 # -------------------------------
-((CURRENT_STEP++))
+((++CURRENT_STEP))
 print_step $CURRENT_STEP $TOTAL_STEPS "Updating System"
 print_info "Refreshing package lists and upgrading installed packages..."
 sudo apt update && sudo apt upgrade -y
@@ -79,7 +79,7 @@ print_separator
 # -------------------------------
 # INSTALL BASIC TOOLS
 # -------------------------------
-((CURRENT_STEP++))
+((++CURRENT_STEP))
 print_step $CURRENT_STEP $TOTAL_STEPS "Installing Core Utilities"
 print_info "Installing essential networking and system tools..."
 sudo apt install -y \
